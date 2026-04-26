@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gireesh G — Creative Developer & Technology Enthusiast.">
+  <meta name="author" content="Gireesh G">
+  <meta name="theme-color" content="#0B0B0C">
+  <meta property="og:title" content="Gireesh G — Creative Developer">
+  <meta property="og:description" content="Creative Developer & Technology Enthusiast. Building meaningful digital experiences.">
+  <meta property="og:type" content="website">
+  <title>GIREESH G — Creative Developer & Technology Enthusiast</title>
+
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text x='16' y='22' text-anchor='middle' fill='white' font-family='sans-serif' font-size='16' font-weight='bold'>G</text></svg>">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Oswald:wght@700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+
+  <!-- PRELOADER -->
+  <div class="preloader">
+    <span class="preloader__text">GIREESH G</span>
+  </div>
+
+  <!-- GRAIN + VIGNETTE -->
+  <div class="grain-overlay"></div>
+  <div class="vignette-overlay"></div>
+
+  <!-- NAVIGATION -->
+  <nav class="nav">
+    <div class="container">
+      <div class="nav__inner">
+        <a href="#" class="nav__logo">
+          <img src="images/g-logo-new.png" alt="Gireesh Logo" class="nav__logo-img" style="height: 32px; width: auto; object-fit: contain;">
+        </a>
+        <div class="nav__links">
+          <a href="#about" class="nav__link">About</a>
+          <a href="#design" class="nav__link">Projects</a>
+          <a href="#contact" class="nav__link">Contact</a>
+        </div>
+        <div class="nav__toggle"><span></span><span></span><span></span></div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="nav__mobile-menu">
+    <a href="#about" class="nav__link">About</a>
+    <a href="#design" class="nav__link">Projects</a>
+    <a href="#contact" class="nav__link">Contact</a>
+  </div>
+
+  <!-- PAGE WRAPPER -->
+  <div class="page-wrapper">
+
+    <!-- ════════════════════════════════════════
+         HERO — Full-screen portrait + oversized name
+         ════════════════════════════════════════ -->
+    <section class="hero" id="hero">
+      <!-- Full-bleed portrait background -->
+      <div class="hero__photo">
+        <img src="images/girree-portrait.jpg" alt="Gireesh G" loading="eager">
+      </div>
+
+      <!-- Dark gradient overlay -->
+      <div class="hero__overlay"></div>
+
+      <!-- Giant name — bottom center, overlapping portrait -->
+      <div class="hero__name-layer">
+        <h1 class="hero__name">GIREESH</h1>
+      </div>
+
+
+    </section>
+
+    <!-- ════════════════════════════════════════
+         CINEMATIC REVEAL TEXT — Scroll triggered
+         ════════════════════════════════════════ -->
+    <section class="reveal-section section">
+      <div class="container">
+        <div class="reveal-text" id="revealText">
+          <span class="reveal-word">Hi!</span>
+          <span class="reveal-word">I'm</span>
+          <span class="reveal-word">Gireesh G.</span>
+          <span class="reveal-word">I love crafting clean,</span>
+          <span class="reveal-word">meaningful digital experiences</span>
+          <span class="reveal-word">with code.</span>
+          <span class="reveal-word">Creative Developer</span>
+          <span class="reveal-word">&</span>
+          <span class="reveal-word">Technology Enthusiast.</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         ABOUT
+         ════════════════════════════════════════ -->
+    <section class="about section" id="about">
+      <div class="container">
+        <div class="section__label" data-animate>01 — About</div>
+        <div class="about__inner">
+          <div class="about__headline" data-animate="slide-left">
+            CRAFTING<br>DIGITAL<br>EXPERIENCES
+          </div>
+          <div class="about__content">
+            <p class="about__text" data-animate>
+              I am a passionate developer focused on building clean, efficient, and meaningful 
+              digital experiences. With a strong foundation in technology and continuous learning, 
+              I strive to combine logic with creativity to craft impactful solutions.
+            </p>
+            <p class="about__text" data-animate>
+              Every line of code I write is driven by purpose — to solve real problems with 
+              elegant, performant solutions. I believe in the intersection of technology and 
+              art, where precision meets creativity.
+            </p>
+
+            <!-- Centered Stats -->
+            <div class="about__stats-centered" id="statsSection">
+              <div class="about__stat-item">
+                <div class="about__stat-value"><span class="about__stat-number" data-count="10">0</span><span class="about__stat-plus">+</span></div>
+                <div class="about__stat-label"><span class="stat-typewriter" data-text="Projects Built"></span></div>
+              </div>
+              <div class="about__stat-divider"></div>
+              <div class="about__stat-item">
+                <div class="about__stat-value"><span class="about__stat-number" data-count="6">0</span><span class="about__stat-plus">+</span></div>
+                <div class="about__stat-label"><span class="stat-typewriter" data-text="Technologies"></span></div>
+              </div>
+              <div class="about__stat-divider"></div>
+              <div class="about__stat-item">
+                <div class="about__stat-value"><span class="about__stat-number">∞</span></div>
+                <div class="about__stat-label"><span class="stat-typewriter" data-text="Curiosity"></span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- ════════════════════════════════════════
+         GRAPHIC DESIGN — Parallax Marquee
+         ════════════════════════════════════════ -->
+    <section class="design section" id="design">
+      <div class="container">
+        <div class="design__header">
+          <div class="section__label" data-animate>GRAPHIC DESIGN</div>
+          <h2 class="section__title" data-animate>Creative Works</h2>
+          <p class="design__intro" data-animate>A curated collection of graphic design projects — brand identities, visual concepts, and creative explorations.</p>
+        </div>
+      </div>
+
+      <!-- Row 1: scroll left -->
+      <div class="marquee" data-direction="left" data-animate>
+        <div class="marquee__track">
+          <img src="images/design-01.jpeg" alt="Design 01" class="marquee__card" loading="lazy">
+          <img src="images/design-02.jpeg" alt="Design 02" class="marquee__card" loading="lazy">
+          <img src="images/design-03.jpeg" alt="Design 03" class="marquee__card" loading="lazy">
+          <img src="images/design-04.jpeg" alt="Design 04" class="marquee__card" loading="lazy">
+          <img src="images/design-05.jpeg" alt="Design 05" class="marquee__card" loading="lazy">
+          <img src="images/design-06.jpeg" alt="Design 06" class="marquee__card" loading="lazy">
+          <img src="images/design-07.jpeg" alt="Design 07" class="marquee__card" loading="lazy">
+          <img src="images/design-08.png" alt="Design 08" class="marquee__card" loading="lazy">
+          <!-- Clones for seamless loop -->
+          <img src="images/design-01.jpeg" alt="Design 01" class="marquee__card" loading="lazy">
+          <img src="images/design-02.jpeg" alt="Design 02" class="marquee__card" loading="lazy">
+          <img src="images/design-03.jpeg" alt="Design 03" class="marquee__card" loading="lazy">
+          <img src="images/design-04.jpeg" alt="Design 04" class="marquee__card" loading="lazy">
+          <img src="images/design-05.jpeg" alt="Design 05" class="marquee__card" loading="lazy">
+          <img src="images/design-06.jpeg" alt="Design 06" class="marquee__card" loading="lazy">
+          <img src="images/design-07.jpeg" alt="Design 07" class="marquee__card" loading="lazy">
+          <img src="images/design-08.png" alt="Design 08" class="marquee__card" loading="lazy">
+        </div>
+      </div>
+
+      <!-- Row 2: scroll right -->
+      <div class="marquee" data-direction="right" data-animate>
+        <div class="marquee__track marquee__track--reverse">
+          <img src="images/design-08.png" alt="Design 08" class="marquee__card" loading="lazy">
+          <img src="images/design-05.jpeg" alt="Design 05" class="marquee__card" loading="lazy">
+          <img src="images/design-02.jpeg" alt="Design 02" class="marquee__card" loading="lazy">
+          <img src="images/design-07.jpeg" alt="Design 07" class="marquee__card" loading="lazy">
+          <img src="images/design-04.jpeg" alt="Design 04" class="marquee__card" loading="lazy">
+          <img src="images/design-01.jpeg" alt="Design 01" class="marquee__card" loading="lazy">
+          <img src="images/design-06.jpeg" alt="Design 06" class="marquee__card" loading="lazy">
+          <img src="images/design-03.jpeg" alt="Design 03" class="marquee__card" loading="lazy">
+          <!-- Clones for seamless loop -->
+          <img src="images/design-08.png" alt="Design 08" class="marquee__card" loading="lazy">
+          <img src="images/design-05.jpeg" alt="Design 05" class="marquee__card" loading="lazy">
+          <img src="images/design-02.jpeg" alt="Design 02" class="marquee__card" loading="lazy">
+          <img src="images/design-07.jpeg" alt="Design 07" class="marquee__card" loading="lazy">
+          <img src="images/design-04.jpeg" alt="Design 04" class="marquee__card" loading="lazy">
+          <img src="images/design-01.jpeg" alt="Design 01" class="marquee__card" loading="lazy">
+          <img src="images/design-06.jpeg" alt="Design 06" class="marquee__card" loading="lazy">
+          <img src="images/design-03.jpeg" alt="Design 03" class="marquee__card" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         SHOWCASE — Projects Grid + iPhone Reels
+         ════════════════════════════════════════ -->
+    <section class="showcase section" id="reelShowcase">
+      <div class="container">
+        <div class="showcase__header">
+          <div class="section__label" data-animate>SHOWCASE</div>
+          <h2 class="section__title" data-animate>Works & Reels</h2>
+          <p class="showcase__intro" data-animate>Website projects I've built on the left — creative reels on the right. Swipe up to see more.</p>
+        </div>
+
+        <div class="showcase__split">
+
+          <!-- LEFT — Website Projects (Parallax Cards) -->
+          <div class="showcase__projects" data-animate>
+            <h3 class="showcase__projects-label">Website Projects</h3>
+
+            <a href="https://techfusion25-tan.vercel.app/" target="_blank" class="project-card">
+              <div class="project-card__browser">
+                <div class="project-card__browser-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <span class="project-card__browser-url">techfusion25-tan.vercel.app</span>
+              </div>
+              <div class="project-card__preview" style="background: url('images/tech-fusion.png') center/cover no-repeat;">
+                <div class="project-card__preview-gradient"></div>
+                <div class="project-card__preview-content">
+                  <span class="project-card__tag">Live Site</span>
+                  <h4 class="project-card__title">Tech Fusion '25</h4>
+                  <p class="project-card__desc">A college symposium website for CSBS department — event registration, schedule, and real-time updates.</p>
+                  <div class="project-card__tech">
+                    <span>React</span><span>Vercel</span><span>UI/UX</span>
+                  </div>
+                </div>
+              </div>
+              <span class="project-card__visit">Visit Site <span>→</span></span>
+            </a>
+
+            <a href="#" class="project-card">
+              <div class="project-card__browser">
+                <div class="project-card__browser-dots">
+                  <span></span><span></span><span></span>
+                </div>
+                <span class="project-card__browser-url">portfolio — gireesh.dev</span>
+              </div>
+              <div class="project-card__preview" style="background: url('images/gireesh-portfolio.png') center/cover no-repeat;">
+                <div class="project-card__preview-gradient"></div>
+                <div class="project-card__preview-content">
+                  <span class="project-card__tag">This Site</span>
+                  <h4 class="project-card__title">Personal Portfolio</h4>
+                  <p class="project-card__desc">Cinematic dark portfolio with smooth animations, liquid WebGL effects, and brutalist design.</p>
+                  <div class="project-card__tech">
+                    <span>HTML</span><span>CSS</span><span>JavaScript</span>
+                  </div>
+                </div>
+              </div>
+              <span class="project-card__visit">View Site <span>→</span></span>
+            </a>
+          </div>
+
+          <!-- RIGHT — iPhone Reels (Swipe Up) -->
+          <div class="showcase__reels" data-animate>
+            <div class="iphone-glow"></div>
+
+            <div class="iphone-mockup" id="iphoneMockup">
+              <!-- Notch -->
+              <div class="iphone-mockup__notch">
+                <div class="iphone-mockup__camera"></div>
+              </div>
+
+              <!-- Reel Container (scroll-snap) -->
+              <div class="iphone-mockup__screen">
+                <div class="reel-scroll" id="reelScroll">
+
+                  <!-- Reel 1 -->
+                  <div class="reel-scroll__item" data-reel="0">
+                    <video src="video/reel.mp4" muted playsinline preload="metadata" class="iphone-mockup__video"></video>
+                    <div class="iphone-mockup__reel-ui">
+                      <div class="reel-ui__left">
+                        <span class="reel-ui__username">@gireesh.g</span>
+                        <span class="reel-ui__caption">Creative Developer ✦</span>
+                      </div>
+                      <div class="reel-ui__right">
+                        <div class="reel-ui__action">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                          <span>2.4K</span>
+                        </div>
+                        <div class="reel-ui__action">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                          <span>186</span>
+                        </div>
+                        <div class="reel-ui__action">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                          <span>Share</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Reel 2 -->
+                  <div class="reel-scroll__item" data-reel="1">
+                    <video src="video/reel2.mp4" muted playsinline preload="metadata" class="iphone-mockup__video"></video>
+                    <div class="iphone-mockup__reel-ui">
+                      <div class="reel-ui__left">
+                        <span class="reel-ui__username">@gireesh.g</span>
+                        <span class="reel-ui__caption">Video Edit ✦</span>
+                      </div>
+                      <div class="reel-ui__right">
+                        <div class="reel-ui__action">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                          <span>1.8K</span>
+                        </div>
+                        <div class="reel-ui__action">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                          <span>92</span>
+                        </div>
+                        <div class="reel-ui__action">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                          <span>Share</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Reel 3 -->
+                  <div class="reel-scroll__item" data-reel="2">
+                    <video src="video/reel3.mp4" muted playsinline preload="metadata" class="iphone-mockup__video"></video>
+                    <div class="iphone-mockup__reel-ui">
+                      <div class="reel-ui__left">
+                        <span class="reel-ui__username">@gireesh.g</span>
+                        <span class="reel-ui__caption">Photo Edit ✦</span>
+                      </div>
+                      <div class="reel-ui__right">
+                        <div class="reel-ui__action">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg>
+                          <span>3.1K</span>
+                        </div>
+                        <div class="reel-ui__action">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                          <span>245</span>
+                        </div>
+                        <div class="reel-ui__action">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                          <span>Share</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <!-- Swipe indicator -->
+                <div class="reel-swipe-hint" id="reelSwipeHint">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"><polyline points="18 15 12 9 6 15"/></svg>
+                  <span>Swipe up</span>
+                </div>
+
+                <!-- Reel dots -->
+                <div class="reel-dots" id="reelDots">
+                  <span class="reel-dot active"></span>
+                  <span class="reel-dot"></span>
+                  <span class="reel-dot"></span>
+                </div>
+              </div>
+
+              <!-- Home indicator -->
+              <div class="iphone-mockup__home-bar"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         SERVICES — Services Offered
+         ════════════════════════════════════════ -->
+    <section class="services section" id="services">
+      <div class="container">
+        <div class="section__label" data-animate>SERVICES</div>
+        <h2 class="section__title" data-animate>Services Offered</h2>
+
+        <div class="services__grid">
+          <div class="services__card" data-animate>
+            <div class="services__icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3 class="services__card-title">Web Development</h3>
+            <p class="services__card-desc">Building responsive, performant websites and web applications with clean, maintainable code and modern best practices.</p>
+          </div>
+
+          <div class="services__card" data-animate>
+            <div class="services__icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+            </div>
+            <h3 class="services__card-title">UI/UX Design</h3>
+            <p class="services__card-desc">Crafting intuitive user interfaces and seamless experiences that prioritize usability, aesthetics, and user satisfaction.</p>
+          </div>
+
+          <div class="services__card" data-animate>
+            <div class="services__icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            </div>
+            <h3 class="services__card-title">Python Scripting</h3>
+            <p class="services__card-desc">Automating workflows, building APIs, and creating intelligent tools with Python for efficiency and scalability.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         TECHNOLOGIES — Infinite Logo Carousel
+         ════════════════════════════════════════ -->
+    <section class="tech-section section">
+      <div class="container">
+        <div class="section__label" data-animate>TECHNOLOGIES</div>
+        <h2 class="section__title" data-animate>Tools I Work With</h2>
+      </div>
+      <div class="infinite-carousel">
+        <div class="infinite-carousel__track">
+          <div class="infinite-carousel__item"><img src="images/angular-svgrepo-com.svg" alt="Angular"></div>
+          <div class="infinite-carousel__item"><img src="images/react-svgrepo-com.svg" alt="React"></div>
+          <div class="infinite-carousel__item"><img src="images/nodejs-svgrepo-com.svg" alt="Node.js"></div>
+          <div class="infinite-carousel__item"><img src="images/js01-svgrepo-com.svg" alt="JavaScript"></div>
+          <div class="infinite-carousel__item"><img src="images/html5-02-svgrepo-com.svg" alt="HTML5"></div>
+          <div class="infinite-carousel__item"><img src="images/css3-02-svgrepo-com.svg" alt="CSS3"></div>
+          <div class="infinite-carousel__item"><img src="images/mongodb-svgrepo-com.svg" alt="MongoDB"></div>
+          <div class="infinite-carousel__item"><img src="images/google-svgrepo-com.svg" alt="Google"></div>
+          <div class="infinite-carousel__item"><img src="images/google-chrome-svgrepo-com.svg" alt="Chrome"></div>
+          <div class="infinite-carousel__item"><img src="images/seo-svgrepo-com.svg" alt="SEO"></div>
+          <div class="infinite-carousel__item"><img src="images/google-ads-svgrepo-com.svg" alt="Ads"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         CONTACT — Big Statement + Form
+         ════════════════════════════════════════ -->
+    <section class="contact section" id="contact">
+      <div class="container">
+        <div class="contact__top">
+          <div class="section__label" data-animate>LET'S TALK</div>
+          <h2 class="contact__big-heading" data-animate>Let's work<br>together.</h2>
+
+          <!-- Eyes that follow cursor -->
+          <div class="eyes" id="eyesWidget" data-animate>
+            <div class="eyes__eye">
+              <div class="eyes__sclera">
+                <div class="eyes__pupil-track">
+                  <div class="eyes__pupil">
+                    <div class="eyes__glint"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="eyes__eye">
+              <div class="eyes__sclera">
+                <div class="eyes__pupil-track">
+                  <div class="eyes__pupil">
+                    <div class="eyes__glint"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="contact__tagline" data-animate>Have a project in mind or just want to connect? I'm always open to new ideas and opportunities.</p>
+        </div>
+
+        <div class="contact__grid">
+          <div class="contact__info" data-animate>
+            <div class="contact__detail-item">
+              <span class="contact__detail-label">Email</span>
+              <a href="mailto:gireeshgandhinathan@gmail.com" class="contact__detail-value">gireeshgandhinathan@gmail.com</a>
+            </div>
+            <div class="contact__detail-item">
+              <span class="contact__detail-label">Phone</span>
+              <a href="tel:+919500066200" class="contact__detail-value">+91 9500 066 200</a>
+            </div>
+            <div class="contact__detail-item">
+              <span class="contact__detail-label">LinkedIn</span>
+              <a href="https://www.linkedin.com/in/gireesh-g-402560332" target="_blank" class="contact__detail-value">linkedin.com/in/gireesh-g</a>
+            </div>
+          </div>
+
+          <form class="contact__form" data-animate action="https://formsubmit.co/gireeshgandhinathan@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New Portfolio Contact Message">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="">
+            <div class="form-group">
+              <label class="form-group__label" for="name">Your Name</label>
+              <input type="text" id="name" name="name" class="form-group__input" placeholder="John Doe" required>
+              <div class="form-group__line"></div>
+            </div>
+            <div class="form-group">
+              <label class="form-group__label" for="email">Your Email</label>
+              <input type="email" id="email" name="email" class="form-group__input" placeholder="hello@example.com" required>
+              <div class="form-group__line"></div>
+            </div>
+            <div class="form-group">
+              <label class="form-group__label" for="message">Message</label>
+              <textarea id="message" name="message" class="form-group__textarea" placeholder="Tell me about your project..." rows="4" required></textarea>
+              <div class="form-group__line"></div>
+            </div>
+            <button type="submit" class="btn btn--primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════
+         FOOTER
+         ════════════════════════════════════════ -->
+    <footer class="footer" id="footer">
+      <!-- Liquid Image Effect -->
+      <div class="liquid-image" id="liquidImage">
+        <canvas id="liquidCanvas"></canvas>
+      </div>
+
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__brand" data-animate>
+            <span class="footer__logo-text">Gireesh G</span>
+            <p class="footer__tagline">Creative Developer &<br>Technology Enthusiast.</p>
+          </div>
+          <div class="footer__nav" data-animate>
+            <a href="#hero">Home</a>
+            <a href="#about">About</a>
+            <a href="#design">Projects</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </div>
+        <div class="footer__divider"></div>
+        <div class="footer__bottom">
+          <p class="footer__copyright">© 2026 Gireesh G. All Rights Reserved.</p>
+          <a href="#hero" class="footer__back-top">Back to Top ↑</a>
+        </div>
+      </div>
+    </footer>
+
+  </div><!-- /.page-wrapper -->
+
+  <!-- ════════════════════════════════════════
+       DOCK — macOS-style social dock at very bottom
+       ════════════════════════════════════════ -->
+  <div class="dock" id="dock">
+    <div class="dock__container">
+      <a href="https://www.linkedin.com/in/gireesh-g-402560332" target="_blank" class="dock__item" data-tooltip="LinkedIn"><img src="images/linkedin-svgrepo-com.svg" alt="LinkedIn"></a>
+      <a href="https://github.com/" target="_blank" class="dock__item" data-tooltip="GitHub"><img src="images/github-142-svgrepo-com.svg" alt="GitHub"></a>
+      <a href="https://www.instagram.com/_.girreee._/?hl=en" target="_blank" class="dock__item" data-tooltip="Instagram"><img src="images/instagram-svgrepo-com.svg" alt="Instagram"></a>
+      <a href="https://wa.me/919500066200?text=Hi%20Gireesh!%20I%20saw%20your%20portfolio%20and%20would%20love%20to%20discuss%20a%20project." target="_blank" class="dock__item" data-tooltip="WhatsApp"><img src="images/whatsapp-svgrepo-com.svg" alt="WhatsApp"></a>
+      <a href="https://t.me/" target="_blank" class="dock__item" data-tooltip="Telegram"><img src="images/telegram-svgrepo-com.svg" alt="Telegram"></a>
+      <a href="https://www.fiverr.com/gireesh_g/buying?source=avatar_menu_profile" target="_blank" class="dock__item" data-tooltip="Fiverr"><img src="images/fiverr-svgrepo-com.svg" alt="Fiverr"></a>
+    </div>
+  </div>
+
+  <!-- ════════════════════════════════════════
+       FLOATING RESUME DOWNLOAD BUTTON
+       ════════════════════════════════════════ -->
+  <a href="resume/gireesh-resume.pdf" download="Gireesh_G_Resume.pdf" class="resume-fab" id="resumeFab" aria-label="Download Resume">
+    <span class="resume-fab__glow"></span>
+    <svg class="resume-fab__icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+      <polyline points="7 10 12 15 17 10"/>
+      <line x1="12" y1="15" x2="12" y2="3"/>
+    </svg>
+    <span class="resume-fab__label">Resume</span>
+  </a>
+
+
+
+  <script src="js/main.js" type="module"></script>
+</body>
+</html>

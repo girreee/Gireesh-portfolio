@@ -1,0 +1,20 @@
+{
+  "name": "gireesh-portfolio",
+  "version": "1.0.0",
+  "description": "Cinematic dark portfolio website for Gireesh G — Creative Developer & Technology Enthusiast",
+  "author": "Gireesh G",
+  "license": "MIT",
+  "scripts": {
+    "dev": "npx live-server src --port=3000 --no-browser",
+    "start": "npx live-server src --port=3000",
+    "build": "echo 'Static site — ready for deployment from /src'"
+  },
+  "keywords": [
+    "portfolio",
+    "creative",
+    "developer",
+    "cinematic",
+    "dark-theme",
+    "web-development"
+  ]
+}

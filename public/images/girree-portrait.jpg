@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="540" viewBox="0 0 420 540">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a"/>
+      <stop offset="100%" style="stop-color:#0B0B0C"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#2E6BFF;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#B11226;stop-opacity:0.15"/>
+    </linearGradient>
+  </defs>
+  <rect width="420" height="540" rx="12" fill="url(#bg)"/>
+  <rect width="420" height="540" rx="12" fill="url(#accent)" opacity="0.5"/>
+  <circle cx="210" cy="200" r="80" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/>
+  <circle cx="210" cy="195" r="35" fill="rgba(255,255,255,0.08)"/>
+  <ellipse cx="210" cy="280" rx="55" ry="40" fill="rgba(255,255,255,0.06)"/>
+  <text x="210" y="400" text-anchor="middle" font-family="sans-serif" font-size="12" letter-spacing="3" fill="rgba(255,255,255,0.25)" text-transform="uppercase">GIREESH G</text>
+  <text x="210" y="420" text-anchor="middle" font-family="sans-serif" font-size="8" letter-spacing="2" fill="rgba(255,255,255,0.12)">PLACE YOUR PHOTO HERE</text>
+</svg>
