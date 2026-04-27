@@ -1365,6 +1365,18 @@
   overflow: hidden;
 }
 
+@media (min-width: 769px) {
+  .footer {
+    padding-left: 70px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding-bottom: calc(clamp(1.5rem, 3vh, 2.5rem) + 70px);
+  }
+}
+
 /* Liquid Image Background */
 .liquid-image {
   position: absolute;

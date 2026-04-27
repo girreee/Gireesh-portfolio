@@ -322,12 +322,7 @@ export class AnimationController {
     const gl = canvas.getContext('webgl');
     if (!gl) return;
 
-    // Use the portrait as the image source
-    const img = new Image();
-    img.crossOrigin = 'anonymous';
-    img.src = 'images/girree-portrait.jpg';
-
-    const mouse = { x: -10, y: -10, active: false };
+    const mouse = { x: 0.5, y: 0.5, active: false };
     const maskRadius = { value: 0 };
     let hovered = false;
     let startTime = Date.now();
@@ -385,50 +380,72 @@ export class AnimationController {
     const fsSource = `
       precision highp float;
       varying vec2 v_uv;
-      uniform sampler2D u_image;
       uniform vec2 u_mouse;
       uniform float u_time;
-      uniform float u_strength;
-      uniform float u_speed;
       uniform vec2 u_resolution;
       uniform float u_maskRadius;
+
+      // Classic random hash
+      float hash(vec2 p) {
+        return fract(sin(dot(p, vec2(12.9898, 78.233))) * 43758.5453);
+      }
+      
+      // Smooth noise
+      float noise(vec2 p) {
+        vec2 i = floor(p);
+        vec2 f = fract(p);
+        f = f * f * (3.0 - 2.0 * f);
+        float a = hash(i);
+        float b = hash(i + vec2(1.0, 0.0));
+        float c = hash(i + vec2(0.0, 1.0));
+        float d = hash(i + vec2(1.0, 1.0));
+        return mix(mix(a, b, f.x), mix(c, d, f.x), f.y);
+      }
+      
+      // Fractal Brownian Motion
+      float fbm(vec2 p) {
+        float f = 0.0;
+        f += 0.5000 * noise(p); p = p * 2.02;
+        f += 0.2500 * noise(p); p = p * 2.03;
+        f += 0.1250 * noise(p); p = p * 2.01;
+        f += 0.0625 * noise(p);
+        return f / 0.9375;
+      }
 
       void main() {
         vec2 uv = v_uv;
         vec2 aspect = vec2(u_resolution.x / u_resolution.y, 1.0);
+        vec2 p = uv * aspect * 4.0; // scale
 
-        // Liquid ripple from mouse
-        if (u_mouse.x >= 0.0 && u_mouse.x <= 1.0) {
-          float dist = distance(uv * aspect, u_mouse * aspect);
-          float ripple = sin(24.0 * dist - u_time * 6.0 * u_speed) * 0.03;
-          float falloff = exp(-dist * 10.0);
-          uv += normalize(uv - u_mouse) * ripple * u_strength * falloff;
-        }
+        // Domain warping for fluid look
+        vec2 q = vec2(fbm(p + u_time * 0.15), fbm(p + vec2(5.2, 1.3) + u_time * 0.12));
+        vec2 r = vec2(fbm(p + 3.0 * q + vec2(1.7, 9.2) + u_time * 0.1),
+                      fbm(p + 3.0 * q + vec2(8.3, 2.8) + u_time * 0.08));
+        float f = fbm(p + 4.0 * r);
 
-        // Ambient subtle wave
-        uv.x += sin(uv.y * 12.0 + u_time * 0.8) * 0.002;
-        uv.y += cos(uv.x * 10.0 + u_time * 0.6) * 0.002;
+        // Premium dark colors
+        vec3 colorBase = vec3(0.02, 0.03, 0.05); // deep dark blue/gray
+        vec3 colorMid = vec3(0.06, 0.08, 0.12);
+        vec3 colorHighlight = vec3(0.1, 0.15, 0.2);
+        
+        vec3 color = mix(colorBase, colorMid, clamp(f * 1.5, 0.0, 1.0));
+        color = mix(color, colorHighlight, clamp(length(q), 0.0, 1.0));
+        color *= f * 1.1 + 0.2; // Add some brightness
 
-        uv = clamp(uv, 0.0, 1.0);
-        vec4 color = texture2D(u_image, uv);
-
-        // Grayscale base
-        float gray = dot(color.rgb, vec3(0.299, 0.587, 0.114));
-        vec3 grayColor = vec3(gray) * 0.3; // dark grayscale
-
-        // Color reveal around cursor
+        // Glow around cursor
         float mask = 0.0;
-        if (u_mouse.x >= 0.0 && u_mouse.x <= 1.0 && u_maskRadius > 0.0) {
-          float d = distance(uv * aspect, u_mouse * aspect);
-          mask = smoothstep(u_maskRadius, u_maskRadius * 0.6, d);
+        if (u_maskRadius > 0.0) {
+          float d = distance(v_uv * aspect, u_mouse * aspect);
+          mask = smoothstep(u_maskRadius, 0.0, d);
         }
+        
+        vec3 glowColor = vec3(0.15, 0.25, 0.4) * 0.6; // Interactive blue glow
+        color += glowColor * mask;
 
-        vec3 finalColor = mix(grayColor, color.rgb * 0.6, mask);
+        // Subtle film grain
+        color -= hash(uv + u_time) * 0.02;
 
-        // Dark overlay for readability
-        finalColor *= 0.35;
-
-        gl_FragColor = vec4(finalColor, 1.0);
+        gl_FragColor = vec4(color, 1.0);
       }
     `;
 
@@ -456,37 +473,8 @@ export class AnimationController {
     // Uniform locations
     const uTime = gl.getUniformLocation(program, 'u_time');
     const uMouse = gl.getUniformLocation(program, 'u_mouse');
-    const uStrength = gl.getUniformLocation(program, 'u_strength');
-    const uSpeed = gl.getUniformLocation(program, 'u_speed');
     const uResolution = gl.getUniformLocation(program, 'u_resolution');
     const uMaskRadius = gl.getUniformLocation(program, 'u_maskRadius');
-
-    // Texture
-    const tex = gl.createTexture();
-    let loaded = false;
-
-    img.onload = () => {
-      gl.bindTexture(gl.TEXTURE_2D, tex);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.LINEAR);
-      gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.LINEAR);
-      gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
-
-      // Draw to offscreen canvas with cover logic
-      const offCanvas = document.createElement('canvas');
-      offCanvas.width = canvas.width;
-      offCanvas.height = canvas.height;
-      const ctx = offCanvas.getContext('2d');
-      const scale = Math.max(canvas.width / img.width, canvas.height / img.height);
-      const sw = img.width * scale;
-      const sh = img.height * scale;
-      ctx.drawImage(img, (canvas.width - sw) / 2, (canvas.height - sh) / 2, sw, sh);
-      gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, offCanvas);
-
-      loaded = true;
-      render();
-    };
 
     // Mask radius animation
     let animStart = null;
@@ -495,14 +483,12 @@ export class AnimationController {
     let lastHovered = false;
 
     const render = () => {
-      if (!loaded) return;
-
       // Animate mask radius
       if (hovered !== lastHovered) {
         lastHovered = hovered;
         animStart = performance.now();
         animFrom = maskRadius.value;
-        animTo = hovered ? 1.2 : 0;
+        animTo = hovered ? 1.0 : 0;
       }
       if (animStart !== null) {
         const t = Math.min((performance.now() - animStart) / 600, 1);
@@ -518,17 +504,17 @@ export class AnimationController {
       const now = (Date.now() - startTime) / 1000;
       gl.uniform1f(uTime, now);
 
-      const mx = mouse.active ? mouse.x : -10;
-      const my = mouse.active ? 1 - mouse.y : -10;
+      const mx = mouse.x;
+      const my = 1.0 - mouse.y;
       gl.uniform2f(uMouse, mx, my);
-      gl.uniform1f(uStrength, 0.12);
-      gl.uniform1f(uSpeed, 0.15);
       gl.uniform2f(uResolution, canvas.width, canvas.height);
       gl.uniform1f(uMaskRadius, maskRadius.value);
 
       gl.drawArrays(gl.TRIANGLE_STRIP, 0, 4);
       requestAnimationFrame(render);
     };
+
+    render(); // Start rendering loop
   }
 
   /* ─── Works Cards — Mouse tracking + hover ─── */
